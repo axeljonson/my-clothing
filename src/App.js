@@ -1,6 +1,4 @@
-import CategoryItem from "./components/category-item/category-item.component";
-
-import "./categories.styles.scss";
+import Directory from "./components/directory/directory.component";
 
 const App = () => {
   // The categories...
@@ -34,11 +32,7 @@ const App = () => {
 
   // We will use a lot of destructuring.
   return (
-    <div className="categories-container">
-      {categories.map((category) => (
-        <CategoryItem key={category.id} category={category} />
-      ))}
-    </div>
+    <Directory categories={categories} />
   );
 };
 
