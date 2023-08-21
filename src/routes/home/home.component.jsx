@@ -1,3 +1,4 @@
+import { Outlet } from "react-router";
 import Directory from "../../components/directory/directory.component";
 
 const Home = () => {
@@ -32,7 +33,10 @@ const Home = () => {
 
   // We will use a lot of destructuring.
   return (
-    <Directory categories={categories} />
+    <div>
+      <Directory categories={categories} />
+      <Outlet />
+    </div>
   );
 };
 
