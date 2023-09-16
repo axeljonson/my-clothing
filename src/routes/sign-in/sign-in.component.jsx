@@ -4,9 +4,12 @@ import { signInWithGooglePopup, createUserDocumentFromAuth } from "../../utils/f
 const SignIn = () => {
   // Log in user
   const logGoogleUser = async () => {
+    // Signs in the user with Google creds.
     const response = await signInWithGooglePopup();
     console.log(response);
-    createUserDocumentFromAuth(response.user);
+    // Checks for user and adds the user to the DB if needed. We should get
+    // back a user document reference.
+    const userDocRef = await createUserDocumentFromAuth(response.user);
   };
 
   return (
